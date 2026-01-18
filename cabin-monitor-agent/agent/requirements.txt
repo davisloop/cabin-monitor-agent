@@ -1,0 +1,14 @@
+# HTTP client
+requests==2.32.3
+
+# Async HTTP client for Home Assistant
+aiohttp==3.10.11
+
+# Cryptography for certificates
+cryptography==44.0.0
+
+# System metrics
+psutil==6.1.0
+
+# Utilities
+python-dateutil==2.9.0

@@ -1,0 +1,32 @@
+name: "CabinMonitor Agent"
+description: "Telemetry agent for CabinMonitor server - collects Home Assistant states and system metrics"
+version: "1.0.0"
+slug: "cabin-monitor-agent"
+init: false
+arch:
+  - amd64
+  - aarch64
+  - armv7
+  - armhf
+  - i386
+startup: application
+boot: auto
+options:
+  site_id: ""
+  server_url: ""
+  enrollment_token: ""
+  upload_interval: 60
+  log_level: "INFO"
+  verify_ssl: true
+schema:
+  site_id: str
+  server_url: url
+  enrollment_token: str?
+  upload_interval: int(10,3600)?
+  log_level: list(DEBUG|INFO|WARNING|ERROR)?
+  verify_ssl: bool?
+map:
+  - ssl:rw
+services:
+  - homeassistant
+homeassistant_api: true
