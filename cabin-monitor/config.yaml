@@ -20,13 +20,11 @@ options:
   verify_ssl: true
 schema:
   site_id: str
-  server_url: url
+  server_url: str
   enrollment_token: str?
-  upload_interval: int(10,3600)?
-  log_level: list(DEBUG|INFO|WARNING|ERROR)?
+  upload_interval: int?
+  log_level: str?
   verify_ssl: bool?
 map:
   - ssl:rw
-services:
-  - homeassistant
 homeassistant_api: true
