@@ -231,7 +231,12 @@ def check_certificate_expiry(
         - days_remaining: Days until expiry (None if expired)
     """
     now = datetime.now(timezone.utc)
-    expiry = cert.not_valid_after_utc
+    # Handle both old and new cryptography library versions
+    if hasattr(cert, 'not_valid_after_utc'):
+        expiry = cert.not_valid_after_utc
+    else:
+        # Older versions use not_valid_after (naive datetime, assumed UTC)
+        expiry = cert.not_valid_after.replace(tzinfo=timezone.utc)
 
     days_remaining = (expiry - now).days
 
