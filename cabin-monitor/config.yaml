@@ -1,6 +1,6 @@
 name: "CabinMonitor Agent"
 description: "Telemetry agent for CabinMonitor server - collects Home Assistant states and system metrics"
-version: "1.0.0"
+version: "1.0.1"
 slug: "cabin-monitor-agent"
 init: false
 arch:

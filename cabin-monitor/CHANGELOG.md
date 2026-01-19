@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+
+- Fix compatibility with older cryptography library versions in HA base image
+
 ## 1.0.0
 
 - Initial release
